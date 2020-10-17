@@ -1,0 +1,4 @@
+In max 
+     - write the minimum value i.e 0
+In min 
+     - write the maximum value i.e. Integer.MAX_VALUE 
