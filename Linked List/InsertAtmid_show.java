@@ -11,12 +11,15 @@ class LinkedList
       {
           InsertAtStart( data);
       }
+    else
+    {
      for(int i=0;i<index-1;i++)
      {
          n=n.next;
      }
      node.next=n.next;
      n.next=node;
+    }
   }
   public void InsertAtStart(int data)
   {
