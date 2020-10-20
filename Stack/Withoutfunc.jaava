@@ -1,0 +1,46 @@
+class Stack
+{
+    int stack[]=new int[5];
+    int top=0;
+    public void push(int data)
+    {
+        stack[top]=data;
+        top++;
+    }
+    public int pop()
+    {
+        top--;
+        int data=stack[top];
+        stack[top]=0;
+        return data;
+    }
+    public int peek()//same as pop just dont delete the last element
+    {
+        top--;
+        int data=stack[top];
+        return data;
+    }
+    public void show()
+    {
+        for(int i:stack)
+        {
+            System.out.print(i+"  ");
+        }
+    }
+}
+public class StackTraversing {
+    public static void main(String args[])
+    {
+        Stack obj=new Stack();
+        obj.push(18);
+        obj.push(20);
+        obj.push(30);
+        
+        System.out.println(obj.pop());
+        
+        System.out.println(obj.peek());
+        
+        obj.show();
+    }
+    
+}
