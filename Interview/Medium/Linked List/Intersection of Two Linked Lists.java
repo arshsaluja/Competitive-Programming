@@ -10,55 +10,18 @@
  * }
  */
 public class Solution {
-    public ListNode getIntersectionNode(ListNode l1, ListNode l2) {
-            ListNode h1=l1;int c1=0;
-        ListNode h2=l2;int c2=0;
-        while(h1!=null)
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode a=headA;
+        ListNode b=headB;
+        while(a!=b)
         {
-            c1++;
-            h1=h1.next;
+            if(a!=null)a=a.next;
+            else a=headB;
+            if(b!=null)b=b.next;
+            else b=headA;
+            
         }
-        while(h2!=null)
-        {
-            c2++;
-            h2=h2.next;
-        }
-        int d=0;
-        if(c1>c2)
-        d=c1-c2;
-        else
-            d=c2-c1;
-        
-        ListNode l=(c1>c2)?l1:l2;
-        ListNode s=(c1<c2)?l1:l2;
-        if(c1==c2)
-        {
-            l=l1;
-        s=l2;
-        }
-        while(d!=0)
-        {
-            l=l.next;
-            d--;
-        }
-        ListNode t=null;
-        while(l!=null||s!=null)
-        {
-             System.out.println(" val "+s.val+"  add "+s);
-            System.out.println("  "+s.val+"  add "+s);
-            if(l==s)
-            {
-                t=l;
-                
-            System.out.println("fl  "+l.val);
-                System.out.print("fs  "+s.val);
-                System.out.print("ft  "+t.val);
-               return t;
-            }
-            s=s.next;
-            l=l.next;
-        }
-        return t;
+        return a;
         
     }
 }
