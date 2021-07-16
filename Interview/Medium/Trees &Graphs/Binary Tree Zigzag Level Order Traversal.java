@@ -18,7 +18,7 @@ class Solution {
         List <Integer> a=new ArrayList<>();
        List<List<Integer>> b=new ArrayList<>();
         if(root==null) return b;
-        Queue<TreeNode> q=new LinkedList<>();
+        Deque<TreeNode> q=new ArrayDeque<>();
         q.add(root);
         a.add(root.val);
         b.add(a);
@@ -27,75 +27,50 @@ class Solution {
         {
              a=new ArrayList<>();
             int p=q.size();
-             System.out.println("q "+   q.size());
-            for(int i=0;i<p;i++)
+            if(c%2!=0)
             {
-            TreeNode t=q.peek();
-                   System.out.println("t "+t.val);
-
-            
-                   // System.out.println("q "+q);
-             // if(c%2==0)
-             // {
-                 if(t.left!=null)
+                 for(int i=0;i<p;i++)
             {
-                      System.out.println("t.left "+t.left.val);
-                a.add(t.left.val);
-                q.add(t.left);
-                }
-            
+            TreeNode t=q.peekFirst();
+            q.removeFirst();
             if(t.right!=null)
             {
-                System.out.println("t.right "+t.right.val);
                 a.add(t.right.val);
                 q.add(t.right);
                 }
-             //}
-            //  else
-            //  {
-            //      if(t.right!=null)
-            // {
-            //     a.add(t.right.val);
-            //     q.add(t.right);
-            //     }
-            //      if(t.left!=null)
-            // {
-            //     a.add(t.left.val);
-            //     q.add(t.left);
-            //     }
-            //  }
-            
-            q.remove();
-        System.out.println("a "+a);
-        System.out.println("b "+b);
-            //Collections.sort(a,Collections.reverseOrder());
-            }
-if(a.size()>0)
-{
-            b.add(a);
-            //c++;
-}
-        }
-        for(int i=0;i<b.size();i++)
-        {
-            if(i%2!=0)
-            {
-               List <Integer> k=b.get(i);
-                b.remove(i);
-                System.out.println();
-                List <Integer> l=new ArrayList<>();
-                int m=0;
-                for(int j=k.size()-1;j>=0;j--)
+            if(t.left!=null)
                 {
-                   l.add(k.get(j)); 
-                    m++;
-                }
-                
-                b.add(i,l);
-                
+                      a.add(t.left.val);
+                      q.add(t.left);
+                }   
+             }   
             }
+            else
+            {
+            for(int i=0;i<p;i++)
+            {
+                
+            TreeNode t=q.peekLast();
+                q.removeLast();
+                 if(t.left!=null)
+                {
+                a.add(t.left.val);
+                q.addFirst(t.left);
+                }
+            
+            if(t.right!=null)
+               {
+                a.add(t.right.val);
+                q.addFirst(t.right);
+                }
+            }
+            }
+          if(a.size()>0)
+           {
+               b.add(a);
+               c++;
+           }
         }
-  System.out.println(c);
         return b;
     }
 }
