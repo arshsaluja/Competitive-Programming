@@ -1,20 +1,15 @@
 class Solution {
     public int coinChange(int[] coins, int amount) {
-        Arrays.sort(coins);
-        int c=0;
-        int n=coins.length;
-        for(int i=n-1;i>=0;i--)
+        int x[]=new int [amount+1];
+        x[0]=1;
+        for(int i=0;i<coins.length;i++)
         {
-            if(amount==0)
-                return c;
-            while(coins[i]<=amount)
+            for(int j=coins[i];j<x.length;j++)
             {
-                amount=amount-coins[i];
-                c++;
+                x[j]+=x[j-coins[i]];
+                
             }
         }
-        if(amount>0)
-            return -1;
-        else return c;
+        return x[amount];
     }
 }
