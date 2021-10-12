@@ -1,10 +1,5 @@
-
-Class solution
-{
-public static void main (String args[])
-{
-#write your code here
-int i=0;
-int j=0;
-}
+class Solution {
+    public int getSum(int a, int b) {
+        return a+b;
+    }
 }
