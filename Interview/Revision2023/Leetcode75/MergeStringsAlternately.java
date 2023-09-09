@@ -9,6 +9,7 @@ class Solution {
             str.append(word2.charAt(i));
             i++;
         }
+        
         return str.toString();
     }
 }
