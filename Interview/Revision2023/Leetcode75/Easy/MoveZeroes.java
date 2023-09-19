@@ -15,8 +15,6 @@ class Solution {
         {
             nums[i]=0;
         }
-        
-        
 
     }
 }
