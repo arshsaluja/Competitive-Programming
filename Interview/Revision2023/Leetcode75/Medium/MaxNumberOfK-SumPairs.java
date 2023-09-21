@@ -1,17 +1,19 @@
 class Solution {
     public int maxOperations(int[] nums, int k) {
-        int operation=0;
-        for(int i=0;i<nums.length;i++)
-        {
-        for(int j=i+1;j<nums.length;j++)
-        {
-            if(nums[i]!=0&&nums[j]!=0&&nums[i]+nums[j]==k){
-                nums[i]=0;
-                nums[j]=0;
-            operation++;
+        Arrays.sort(nums);
+        int i=0,j=nums.length-1,op=0;
+        while(i<j){
+            if(nums[i]+nums[j]==k)
+            {
+                i++;
+                j--;
+                op++;
             }
+            else if(nums[i]+nums[j]<k)
+            i++;
+            else if(nums[i]+nums[j]>k)
+            j--;
         }
-        }
-        return operation;
+        return op;
     }
 }
