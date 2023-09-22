@@ -1,5 +1,5 @@
 class Solution {
-    public int subs(String str)
+    public int sub(String str)
     {
         int c=0;
         for(int i=0;i<str.length();i++)
@@ -15,7 +15,7 @@ class Solution {
         for(int i=0;i<s.length()-k+1;i++)
         {
                 String str=s.substring(i,i+k);
-                int c=subs(str);
+                int c=sub(str);
                 max=Math.max(max,c);
         }
         return max;
