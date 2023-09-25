@@ -1,4 +1,5 @@
 class Sol {
+    
     public int sub(String str)
     {
         int c=0;
