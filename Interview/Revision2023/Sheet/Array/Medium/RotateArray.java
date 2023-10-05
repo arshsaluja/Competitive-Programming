@@ -1,4 +1,5 @@
 public void rotate(int[] nums, int k) {
+  
 if(k > nums.length)
 k=k%nums.length;
 int[] result = new int[nums.length];
