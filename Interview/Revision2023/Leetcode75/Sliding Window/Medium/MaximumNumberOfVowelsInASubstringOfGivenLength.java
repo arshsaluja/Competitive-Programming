@@ -1,4 +1,4 @@
-class Sol {
+class Solution {
     
     public int sub(String str)
     {
