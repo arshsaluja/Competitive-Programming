@@ -1,24 +1,21 @@
-class Sol {
-    
-    public int sub(String str)
-    {
-        int c=0;
-        for(int i=0;i<str.length();i++)
-        {
-            char ch=str.charAt(i);
-            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
-            c++;
-        }
-        return c;
-    }
+class Solution {
     public int maxVowels(String s, int k) {
-        int r=k-1;int max=0;
-        for(int i=0;i<s.length()-k+1;i++)
+        List<Character> vw=Arrays.asList('a','e','i','o','u');
+        Set<Character> vowels=new HashSet<Character> (vw);
+        int vcnt=0;
+        for(int i=0;i<k;i++)
         {
-                String str=s.substring(i,i+k);
-                int c=sub(str);
-                max=Math.max(max,c);
+            if(vowels.contains(s.charAt(i))) vcnt++;
         }
-        return max;
+        int l=0;int r=k-1;int maxvcnt=vcnt;
+        while(r<s.length()-1)
+        {
+            if(vowels.contains(s.charAt(l))) vcnt--;
+            l++;
+            r++;
+            if(vowels.contains(s.charAt(r))) vcnt++;
+            maxvcnt=Math.max(maxvcnt,vcnt);
+        }
+        return maxvcnt;
     }
 }
