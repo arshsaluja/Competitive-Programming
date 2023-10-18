@@ -1,16 +1,25 @@
 class Solution {
     public boolean closeStrings(String word1, String word2) {
-        int s1=word1.length();
-        int s2=word2.length();
-        if(s1!=s2) return false;
-        Set <Character> s1=new HashSet<>();
-        Set <Character> s2=new HashSet<>();
-        
+        if (word1.length() != word2.length()) return false;
 
-        for(int i=0;i<s1;i++){
-                if(ar1[i]!=ar2[i]) return false;
+        int[] charCount1 = new int[26];
+        int[] charCount2 = new int[26];
+
+        for (char c : word1.toCharArray()) {
+            charCount1[c - 'a']++;
         }
 
-        return true;
+        for (char c : word2.toCharArray()) {
+            charCount2[c - 'a']++;
+        }
+
+        for (int i = 0; i < charCount1.length; i++) {
+            if (charCount1[i] > 0 ^ charCount2[i] > 0) return false;
+        }
+
+        Arrays.sort(charCount1);
+        Arrays.sort(charCount2);
+
+        return Arrays.equals(charCount1, charCount2);
     }
 }
