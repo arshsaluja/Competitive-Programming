@@ -5,10 +5,7 @@ class Solution {
             if(c=='[') 
             else if(c==']')
             else 
-            {
                 int no=c;
-
-            }
         }
     }
 }
