@@ -1,4 +1,4 @@
-class Solution {
+class SoL {
     public String decodeString(String s) {
         Stack<Character> st=new Stack<>();
         for(char c:s){
