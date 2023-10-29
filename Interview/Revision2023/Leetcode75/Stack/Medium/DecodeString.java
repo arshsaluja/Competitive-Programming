@@ -1,5 +1,5 @@
 class Solution{
-    public String decodeString(String s) {
+    public String decodeString(String string) {
         Stack<Character> st=new Stack<>();
         for(char c:s){
             if(c=='[') 
