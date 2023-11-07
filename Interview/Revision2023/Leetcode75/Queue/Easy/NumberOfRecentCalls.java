@@ -1,4 +1,4 @@
-class RecentCounter {
+class Recent {
 Queue<Integer> q;
     public RecentCounter() {
         q=new LinkedList();
