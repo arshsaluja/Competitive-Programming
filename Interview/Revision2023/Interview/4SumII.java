@@ -11,6 +11,7 @@ class Solution {
         for(int c:nums3){
             for(int d:nums4){
                 co+=map.getOrDefault(-(c+d),0);
+                
             }
         }
         return co;
