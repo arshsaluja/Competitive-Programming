@@ -1,5 +1,5 @@
 class Solution {
-    public ListNode mergeKLists(ListNode[] lists) {
+    public ListNode mergeKList(ListNode[] lists) {
     }
     
 }
