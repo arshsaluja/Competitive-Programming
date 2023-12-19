@@ -1,6 +1,5 @@
 // Java implementation of the approach
 import java.io.*;
-
 class solution
 {
     
